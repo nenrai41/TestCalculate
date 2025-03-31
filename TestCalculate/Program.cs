@@ -25,16 +25,16 @@
 
 
 ConstantOfParametr.AIRDENSITY = 1.2754f; //метры кг/м^3
-ConstantOfParametr.CHORDOFWING = 2.5f; //метры 
-ConstantOfParametr.CHORDOFRUDDER = 1.0f; //метры 
-ConstantOfParametr.COEFFICIENTOFLIFTOGWING = 0.8f;
-ConstantOfParametr.COEFFICIENTOFLIFTOGRUDDER = 0.95f;
+ConstantOfParametr.CHORDOFWING = 0.2f; //метры 
+ConstantOfParametr.CHORDOFRUDDER = 0.15f; //метры 
+ConstantOfParametr.COEFFICIENTOFLIFTOGWING = 0.7f;
+ConstantOfParametr.COEFFICIENTOFLIFTOGRUDDER = 0.7f;
 
 
-float relativePayloadMass = 0.4f; 
-float relativeMassOfEquipment = 0.3f;
-float relativeMassOfEngineSystem = 0.3f;
-float payloadMass = 30.0f; //кг 
+float relativePayloadMass = 0.2f; 
+float relativeMassOfEquipment = 0.2f;
+float relativeMassOfEngineSystem = 0.6f;
+float payloadMass = 10.0f; //кг 
 
 //Console.WriteLine("Введите относительную массу ПН: ");
 //string relativePayloadMassStr = Console.ReadLine();
@@ -59,7 +59,7 @@ dataProcessor.CalculateOfMass(payloadMass, relativePayloadMass, relativeMassOfEq
 
 
 float relativeFuselageLength = 3.0f; //метры 
-float fuselageDiametr = 1.1f; //метры 
+float fuselageDiametr = 0.4f; //метры 
 
 
 //Console.WriteLine("Введите относительное удлинение фюзеляжа: ");
@@ -131,11 +131,11 @@ Console.WriteLine("Диаметр фюзеляжа: " + fuselageDiametr + " м")
 Console.WriteLine("Длина фюзеляжа: " + dataProcessor.FuselageLength + " м");
 Console.WriteLine("Крейсерская скорость полета: " + cruisingSpeed + " м/c");
 Console.WriteLine("Подъемная сила крыла: " + dataProcessor.LiftOfWing + " Н");
-Console.WriteLine("Подъемная сила руля: " + dataProcessor.LiftOfRubbers + " Н");
+Console.WriteLine("Подъемная сила руля: " + dataProcessor.LiftOfRudders + " Н");
 Console.WriteLine("Площадь крыла: " + dataProcessor.AreaOfWing + " м^2");
 Console.WriteLine("Размах крыла: " + dataProcessor.SpanOfWing + " м");
 Console.WriteLine("Площадь руля: " + dataProcessor.AreaOfRudders + " м^2");
-Console.WriteLine("Размах руля: " + dataProcessor.SpanOfRudders + " м");
+Console.WriteLine("Размах руля: " + dataProcessor.SpanOfRudder + " м");
 Console.WriteLine("Длина отсека аппаратуры: " + dataProcessor.LengthOfEquipment + " м");
 Console.WriteLine("Длина отсека ДУ: " + dataProcessor.LengthOfEngineSystem + " м");
 Console.WriteLine("Длина отсека ПН: " + dataProcessor.LengthOfPayload + " м");

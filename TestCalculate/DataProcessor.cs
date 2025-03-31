@@ -62,7 +62,7 @@ namespace TestCalculate
 
         public bool CalculateOfMass(float payloadMass, float relativePayloadMass, float relativeMassOfEquipment, float relativeMassOfEngineSystem)
         {
-            if((relativePayloadMass + relativeMassOfEngineSystem + relativeMassOfEngineSystem) == 1 && payloadMass != 0)
+            if((relativePayloadMass + relativeMassOfEquipment + relativeMassOfEngineSystem) == 1 && payloadMass != 0)
             {
                 StartingMass = payloadMass / relativePayloadMass;
                 PayloadMass = payloadMass;
@@ -99,13 +99,13 @@ namespace TestCalculate
 
         public float CruisingSpeed { get; private set; } = 0f;
         public float LiftOfWing { get; private set; } = 0f;
-        public float LiftOfRubbers { get; private set; } = 0f;
+        public float LiftOfRudders { get; private set; } = 0f;
 
 
         public float AreaOfWing { get; private set; } = 0f;
         public float SpanOfWing { get; private set; } = 0f;
         public float AreaOfRudders { get; private set; } = 0f;
-        public float SpanOfRudders { get; private set; } = 0f;
+        public float SpanOfRudder { get; private set; } = 0f;
 
         public bool CalculateOfAreaAndSpan(float cruisingSpeed)
         {
@@ -116,9 +116,9 @@ namespace TestCalculate
                 AreaOfWing = (2.0f * LiftOfWing) / (ConstantOfParametr.AIRDENSITY * MathF.Pow(cruisingSpeed, 2) * ConstantOfParametr.COEFFICIENTOFLIFTOGWING);
                 SpanOfWing = AreaOfWing / ConstantOfParametr.CHORDOFWING;
 
-                LiftOfRubbers = 0.1f * (StartingMass * 9.82f);
-                AreaOfRudders = (2.0f * LiftOfRubbers) / (ConstantOfParametr.AIRDENSITY * MathF.Pow(CruisingSpeed, 2) * ConstantOfParametr.COEFFICIENTOFLIFTOGRUDDER);
-                SpanOfRudders = AreaOfRudders / ConstantOfParametr.CHORDOFRUDDER;
+                LiftOfRudders = (0.1f * (StartingMass * 9.82f));
+                AreaOfRudders = (2.0f * LiftOfRudders) / (ConstantOfParametr.AIRDENSITY * MathF.Pow(CruisingSpeed, 2) * ConstantOfParametr.COEFFICIENTOFLIFTOGRUDDER);
+                SpanOfRudder = AreaOfRudders /(2.0f* ConstantOfParametr.CHORDOFRUDDER);
                 return true;
             }
             else
